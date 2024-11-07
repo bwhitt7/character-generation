@@ -1,0 +1,14 @@
+{% set data = load.globalData %}
+
+{% set char_link = "" %}
+{% set char_image = "" %}
+{% for d in data %}
+    {% if d.name == char.name %}
+    {% set char_link = d.link %}
+    {% set char_image = d.avatar %}
+    {% endif %}
+{% endfor %}
+
+<a href="{{char_link}}">{{char.name}}</a>
+<p>{{char.pronouns}}</p>
+<img src="{{char_image}}">
